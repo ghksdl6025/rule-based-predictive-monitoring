@@ -44,10 +44,10 @@ Brief description of uploaded files.
 ```
 📦rule-based-predictive-monitoring
  ┣ 📂association rule mining
- ┃ ┣ 📜apriori2.py
+ ┃ ┣ 📜apriori.py
  ┃ ┣ 📜comparison.py
  ┃ ┣ 📜conviction.py
- ┃ ┣ 📜discover2.py
+ ┃ ┣ 📜discover.py
  ┃ ┗ 📜filter.py
  ┣ 📂data
  ┃ ┗ 📜dataset.zip
