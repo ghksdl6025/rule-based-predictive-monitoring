@@ -60,7 +60,7 @@ def bpic2015():
                 '''
                 Accepted
                 '''
-                frequent_itemsets = fpgrowth(accepted,min_support=min_support,use_colnames=True)
+                frequent_itemsets = apriori(accepted,min_support=min_support,use_colnames=True)
                 label1 = association_rules(frequent_itemsets,metric='confidence',min_threshold = min_threshold)
                 label1['consequents'] = [list(x) for x in list(label1['consequents'])]
 
@@ -81,7 +81,7 @@ def bpic2015():
                 Refused
                 '''
                 # print('Label 0!')
-                frequent_itemsets = fpgrowth(refused,min_support=min_support,use_colnames=True)
+                frequent_itemsets = apriori(refused,min_support=min_support,use_colnames=True)
                 label1 = association_rules(frequent_itemsets,metric='confidence',min_threshold = min_threshold)
                 label1['consequents'] = [list(x) for x in list(label1['consequents'])]
 
@@ -134,7 +134,7 @@ def bpic2011():
                 
                 print('Label 1!')
 
-                frequent_itemsets = fpgrowth(accepted,min_support=min_support,use_colnames=True)
+                frequent_itemsets = apriori(accepted,min_support=min_support,use_colnames=True)
                 label1 = association_rules(frequent_itemsets,metric='confidence',min_threshold = min_threshold)
                 label1['consequents'] = [list(x) for x in list(label1['consequents'])]
 
@@ -153,20 +153,9 @@ def bpic2011():
 
                 label1 = label1.loc[labelin,['antecedents','consequents']]
                 label1.to_json(label1_name,orient='columns')
-                # anterules = []
-                # labelin=[]
-
-                # for pos,k in tqdm(enumerate(list(label1['antecedents']))):
-                #     if sorted(k) not in anterules:
-                #         anterules.append(sorted(k))
-                #         labelin.append(pos)
-                # label1 = label1.loc[labelin,['antecedents','consequents']]
-
-
-                # label1.to_json(label1_name,orient='columns')
                 
                 print('Label 0!')
-                frequent_itemsets = fpgrowth(refused,min_support=min_support,use_colnames=True)
+                frequent_itemsets = apriori(refused,min_support=min_support,use_colnames=True)
                 label1 = association_rules(frequent_itemsets,metric='confidence',min_threshold = min_threshold)
                 label1['consequents'] = [list(x) for x in list(label1['consequents'])]
 
@@ -181,22 +170,7 @@ def bpic2011():
                 label1.to_json(label1_name,orient='columns')
                 label1.to_csv(dir_path+'/label0result_rndst'+str(rndst)+'.csv',index=False)
 
-                # label1 = label1.loc[labelin,['antecedents','consequents']]
-                # label1 = label1.reset_index(drop=True)
-                
-                # label1.to_json(label1_name,orient='columns')
-                     
-                # anterules = []
-                # labelin=[]
 
-                # for pos,k in tqdm(enumerate(list(label1['antecedents']))):
-                #     if sorted(k) not in anterules:
-                #         anterules.append(sorted(k))
-                #         labelin.append(pos)
-                # label1 = label1.loc[labelin,['antecedents','consequents']]
-
-                # label1.to_json(label1_name,orient='columns')
-                
                 
 bpic2015()
 # bpic2011()
