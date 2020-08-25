@@ -5,6 +5,17 @@ This is the code associated to the paper:
 **A rule-based framework for interpretablepredictions of business process outcomesusing event logs**
 , Suhwan Lee, and Marco Comuzzi
 
+## Framework
+The research framwork is as follows
+
+![framework](./img/framework.jpg)
+
+The framework consists of outcome prediction process using association rule mining and 
+machine learning-based approach. The process handles from acquiring event log to 
+rule visualization which is originated from association rules. 
+
+The detailed content and explanation of each step are described in the paper.
+
 ## Dataset
 
 Followings are datasets that used event log in this research.  
